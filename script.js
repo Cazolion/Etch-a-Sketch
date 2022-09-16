@@ -5,13 +5,13 @@ x = prompt("How many squares side of the grid would you like? \n (Maximum 100)")
     if (x > 100) {
         x = 100;
     }
-    else if (x != Number || x <= 0) {     // reassign x again
-        x = prompt("Please input a number between 1 and 100");
-    }
+    // else if (x != Number || x <= 0) {     // reassign x again
+    //     x = prompt("Please input a number between 1 and 100");
+    // }
+
 };
 
 getNumber();
-
 
 function createGrid(x,x) {
     const container = document.getElementById('grid');
