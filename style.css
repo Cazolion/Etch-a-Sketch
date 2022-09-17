@@ -95,6 +95,9 @@ p {
 .game {
     display: flex;
     justify-content: center;
+    background-color: #003049;
+    padding: 50px;
+    align-self: center;
 }
 
 #grid {
@@ -102,11 +105,12 @@ p {
     justify-content: center;
     width: 900px;
     height: 900px;
-    border: 1px solid #003049;
+    border: 1px solid #FCB62C;
 }
 
 .box {
-    border: 1px solid #003049;
+    border: 1px solid #FCB62C;
+    background-color: #F1EEDD;
     flex-grow: 1;
 }
 
@@ -123,4 +127,12 @@ p {
 .coloured {
     background-color: #DE1D1D;
     
+}
+
+.control {
+    align-self: center;
+}
+
+.box #gradient {
+    opacity: 10%;
 }
