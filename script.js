@@ -54,5 +54,9 @@ reset.addEventListener('click', () => {
 });
 
 
-
-
+// colour randomiser for Rainbow selection
+function randomColor() {
+    color='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
+    return color;
+}
+console.log(randomColor())
