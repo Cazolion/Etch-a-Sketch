@@ -103,9 +103,10 @@ p {
 #grid {
     display: flex;
     justify-content: center;
-    width: 900px;
-    height: 900px;
+    width: 600px;
+    height: 600px;
     border: 1px solid #FCB62C;
+    background-color: #F1EEDD;
 }
 
 .box {
@@ -120,19 +121,6 @@ p {
     flex-grow: 1;
 }
 
-/* .box:hover {
-    background-color: #FF8400;
-} */
-
-.coloured {
-    background-color: #DE1D1D;
-    
-}
-
 .control {
     align-self: center;
-}
-
-.box #gradient {
-    opacity: 10%;
 }

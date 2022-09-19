@@ -1,3 +1,8 @@
+// colour randomiser for Rainbow selection
+function randomColour() {
+    return 'rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
+}
+
 function createGrid(x, x) {
     let grid = document.createElement('div');
     game.appendChild(grid);
@@ -13,13 +18,24 @@ function createGrid(x, x) {
             box.className = 'box';
             row.appendChild(box);
         }
-
-        grid.appendChild(row);
+    grid.appendChild(row);
     }
 
     const boxes = document.querySelectorAll(".box");
     boxes.forEach(box => box.addEventListener("mouseover", () => {
-    box.classList.add('coloured')
+    if(document.getElementById('default').checked) {
+        box.style.backgroundColor = "#DE1D1D"
+    }
+    else if(document.getElementById('rainbow').checked) {
+        box.style.backgroundColor = randomColour()
+    }
+    else if(document.getElementById('gradient').checked) {
+        box.style.backgroundColor = "#003049"
+        if (box.style.opacity < 1)
+        {
+          box.style.opacity = parseFloat(box.style.opacity || 0) + 0.1; 
+        } 
+    }
 }));
 
 };
@@ -33,14 +49,12 @@ function getNumber() {
     else if (!parseInt(x) || x <= 0) {     // reassign x again
         getNumber();
     }
-
 };
 
 const reset = document.querySelector('#reset');
 const game = document.querySelector('.game');
 
 let x = 0;
-
 
 getNumber();
 
@@ -52,11 +66,3 @@ reset.addEventListener('click', () => {
     getNumber();
     createGrid(x,x);
 });
-
-
-// colour randomiser for Rainbow selection
-function randomColor() {
-    color='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
-    return color;
-}
-console.log(randomColor())
